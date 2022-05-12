@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.sungrad{ 
+    width:200px;
+    height:200px;
+    border-radius: 50%; 
+    background-image: radial-gradient(yellow 30%, orange 100%)
+}
+ .sunshine{ 
+    width:220px;
+    height:220px;
+    border-radius: 50%;
+    top: -10px;
+    left: -10px; 
+    background-image: radial-gradient(orange 10%, transparent 95%)
+ }
+ .shadow{
+    width:200px;
+    height:200px;
+    border-radius: 50%; 
+    background-image: linear-gradient(transparent 0%, #000 50%)
+ }
+ .earthgrad{
+    width:200px;
+    height:200px; 
+    border-radius: 50%; 
+    border:20px solid rgba(255,255,0,0.5);
+    background-image: radial-gradient( farthest-side at 20% 20%,#009688 50%,#009688 60%, #0270e9 70%,#0270e9 100% )
+}
+</style>
+<body>
+    <div class = "sunshine">
+        <div class="shadow">
+        </div>
+        
+    </div>
+
+        <div class="earthgrad">
+        </div>
+
+       
+</body>
+</html>

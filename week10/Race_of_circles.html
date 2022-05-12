@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body {
+ display: flex;
+ background-color: aquamarine;
+ border: solid 1px red;
+ height: 75vw;
+}
+.container {
+ background-color: rgb(97, 104, 201);
+ width: 80vw;
+ height: auto;
+ margin: auto;
+ border: solid 3px rgb(72, 177, 40);
+ }
+ .circle {
+ width: 80px;
+ height: 80px;
+ border-radius: 50%;
+ background-color: chartreuse;
+ margin: 10px;
+ font-size: 2em;
+ font-weight: 800;
+ }
+ .center {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ }
+ .container:hover .cricle {
+ background-color: rgb(223, 161, 161);
+ transform: translate(300px)
+ }
+ .transformed {
+ color: red;
+ transform: translate(70vw)
+ }
+ .circle:nth-of-type(n):hover,
+ .circle:nth-of-type(n):active {
+ color: red;
+ transform: translate(70vw)}
+ .circle:nth-of-type(1) {
+ background-color: aquamarine;
+ transition: transform 2s linear;}
+ .circle:nth-of-type(2) {
+ background-color: rgb(109, 142, 233);
+ transition: transform 2s ease; }
+ .circle:nth-of-type(3) {
+ background-color: rgb(219, 109, 233);
+ transition: transform 2s ease-in;}
+ .circle:nth-of-type(4) {
+ background-color: rgb(8, 31, 95);
+ transition: transform 2s ease-in-out;}
+ .circle:nth-of-type(5) {
+ background-color: rgb(185, 224, 93);
+ transition: transform 2s ease-out;}
+ .circle:nth-of-type(6) {
+ background-color: rgb(176, 179, 39);
+ transition: transform 2s cubic-bezier(0.445, 0.05, 0.55, 0.95);}
+</style>
+<script>
+    function start() {
+        let circles = document.querySelectorAll('.circle');
+        circles.forEach(circle => {
+        console.log(circle);
+        circle.classList.toggle('transformed')
+        })
+    }
+</script>
+<body>
+    <div class="container" onclick="start()">
+        <div class="circle center">1</div>
+        <div class="circle center">2</div>
+        <div class="circle center">3</div>
+        <div class="circle center">4</div>
+        <div class="circle center">5</div>
+        <div class="circle center">6</div>
+    </div>
+</body>
+</html>

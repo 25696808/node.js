@@ -1,0 +1,10 @@
+extends layout 
+
+block content 
+    h1= title
+    p Welcome to #{title}
+    -var tasks=['job1','job2','job3']
+    ul 
+        each task, index in tasks
+            li #{index} : #{task}
+            

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>Wordle</title>
+<link rel="stylesheet" href="wordlemj.css">
+<script src="wordlemj.js"></script>
+<script src="jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="section">
+        <h1 id="title"> Wordle 麻將 </h1>
+          
+        <div class="center">
+            <input type="checkbox" id="click">
+            <label id="info" for="click" class="click-me">
+                <!--INFO-->
+                <i class='bx bx-info-circle'></i>
+            </label>
+            <label  id="B_mode"class="click-me">
+                <!--dark mode-->
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </label>
+            <div class="content">
+                <div class="header">
+                    <h2 >遊戲規則</h2>
+                    <label for="click" class="fas fa-times"></label>
+
+                </div>
+                <p style="font-weight: bold;">玩家必須猜出系統給予的胡牌牌型,共有五次機會。一次猜對會得到10分</p>
+                    <p style="font-weight: bold;">積分兩次猜對得8分,以此類推。當五次都未猜對或猜中胡牌遊戲即結束。</p>
+                    <p style="font-weight: bold;">胡牌排列順序必須依照萬、筒、條、四喜、三元的順序排列。
+                    <p style="font-weight: bold;">胡牌介紹 : 胡牌牌型包含五組順子或刻子加上一組將所組成。</p>
+                    <p style="font-weight: bold;font-size: 18px;">(1)順子 : 三個相連的萬、筒、條</p>
+                    <img src="img/1.svg" style="width: 35px;">
+                    <img src="img/2.svg" style="width: 35px;">
+                    <img src="img/3.svg" style="width: 35px;margin-right: 50px;">
+                    <img src="img/q.svg" style="width: 35px;">
+                    <img src="img/w.svg" style="width: 35px;">
+                    <img src="img/e.svg" style="width: 35px;margin-right: 50px;">
+                    <img src="img/a.svg" style="width: 35px;">
+                    <img src="img/s.svg" style="width: 35px;">
+                    <img src="img/d.svg" style="width: 35px;margin-bottom:6px;">
+                    <p style="font-weight: bold;font-size: 18px;">(2)刻子 : 三個相同的萬、筒、條、四喜、三元</p>
+                    <img src="img/4.svg" style="width: 35px;">
+                    <img src="img/4.svg" style="width: 35px;">
+                    <img src="img/4.svg" style="width: 35px;margin-right: 50px;">
+                    <img src="img/C.svg" style="width: 35px;">
+                    <img src="img/C.svg" style="width: 35px;">
+                    <img src="img/C.svg" style="width: 35px;margin-right: 50px;">
+                    <img src="img/B.svg" style="width: 35px;">
+                    <img src="img/B.svg" style="width: 35px;">
+                    <img src="img/B.svg" style="width: 35px;margin-bottom:6px;">
+                    <p style="font-weight: bold;font-size: 18px;">(3)將 : 兩個相同的牌</p>
+                    <img src="img/8.svg" style="width: 35px;">
+                    <img src="img/8.svg" style="width: 35px;margin-right: 50px;">
+                    <img src="img/7.svg" style="width: 35px;">
+                    <img src="img/7.svg" style="width: 35px;margin-bottom:6px;">
+                    <p style="font-weight: bold;font-size: 18px;">範例胡牌 : </p>
+                    
+                    <img src="img/1.svg" style="width: 35px;">
+                    <img src="img/2.svg" style="width: 35px;">
+                    <img src="img/3.svg" style="width: 35px;">
+                    <img src="img/8.svg" style="width: 35px;">
+                    <img src="img/8.svg" style="width: 35px;">
+                    <img src="img/Q.svg" style="width: 35px;">
+                    <img src="img/W.svg" style="width: 35px;">
+                    <img src="img/W.svg" style="width: 35px;">
+                    <img src="img/W.svg" style="width: 35px;">
+                    <img src="img/W.svg" style="width: 35px;">
+                    <img src="img/E.svg" style="width: 35px;">
+                    <img src="img/A.svg" style="width: 35px;">
+                    <img src="img/S.svg" style="width: 35px;">
+                    <img src="img/D.svg" style="width: 35px;">
+                    <img src="img/D.svg" style="width: 35px;">
+                    <img src="img/F.svg" style="width: 35px;">
+                    <img src="img/G.svg" style="width: 35px;">
+                    
+
+                
+
+                <div class="line"></div>
+                <label for="click" class="close-btn">Close</label>
+            </div>
+        </div>
+    </div>
+    
+        <hr></hr>
+    
+
+    <div id="board"></div>
+<!-- 
+        <span id="0-0" class="tile"></span>
+        <span id="0-1" class="tile"></span>
+        <span id="0-2" class="tile"></span>
+-->
+    <br>
+
+<!--
+    <div class="keyboard-row">
+        <div id="Key1" class="key-tile">
+            <img src="img/1.svg" class="keyboard-img"></div>
+        <div id="Key2" class="key-tile">
+            <img src="img/2.svg" class="keyboard-img"></div>
+        <div id="Key3" class="key-tile">
+            <img src="img/3.svg" class="keyboard-img"></div>
+-->
+
+    <h1 id="answer"></h1>
+    <div id="answer-sheet"></div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background: linear-gradient(180deg,rgb(216, 224, 231),rgb(187, 183, 183));
+            height: 100%;
+        }
+
+        .header{
+            width:100%;
+            height:100px;
+            text-align:center;
+            text-shadow: 2px 1px 10px rgb(101, 101, 99);
+            font-family: Comic Sans MS;
+        }
+        .tile{
+            height: 60px;
+            width: 60px;
+            border: solid rgb(146, 146, 144) 5px;
+            border-radius: 10px;
+            background-color:rgb(245, 240, 240);
+            margin:10px;
+            float:left;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            font-size:15pt;
+            font-family: Comic Sans MS;
+            box-shadow: 3px 3px 1px 1px grey;
+        }/*上排文字*/
+        
+        .board{
+            width:80%;
+            height:300px;
+            background: linear-gradient(180deg,rgb(170, 164, 164),rgb(235, 221, 221));
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2%;
+        }/*上排版面*/
+
+        .keyboard{
+            width: 90%;
+            height: 300px;
+            background:rgb(210, 211, 194);
+            margin-left: auto;
+            margin-right: auto;
+        }/*下排版面*/
+        .key{
+            height: 50px;
+            width: 50px;
+            border: solid rgb(146, 146, 144) 5px;
+            border-radius: 10px;
+            margin:5px;
+            float:left;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            font-size:15pt;
+            font-family: Comic Sans MS;
+            background-color:rgb(234, 240, 233);
+            box-shadow: 3px 3px 1px 1px grey;
+        }/*下排文字*/
+
+        .keyrows{
+            width:100%;
+            background-color:red;
+        }
+    
+        .spin{
+            animation-name: spinAnimation;
+            animation-duration:1s;
+            animation-timing-function: ease-in-out;
+            
+        }
+        @keyframes spinAnimation {
+            from {
+                transform:rotateY(0deg)
+            }
+            to {
+                transform:rotateY(180deg)
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="header">
+        <p >Wordle GAME</p>
+    </section>
+        <div class="board">
+            <div class="tile" id="tile-1">1</div>
+            <div class="tile" id="tile-2">2</div>
+            <div class="tile" id="tile-3">3</div>
+            <div class="tile" id="tile-4">4</div>
+            <div class="tile" id="tile-5">5</div>
+        </div>
+        <div class="keyboard" id="keyboard">
+
+            <!-- 
+            <div class="key" id="key-Q">Q</div>
+            <div class="key" id="key-W">W</div>
+             -->
+        </div>
+    
+
+    <script>
+        const keyboard=[
+            ['Q','W','E','R','T','Y','U','I','O','P'],
+            ['A','S','D','F','G','H','J','K','L'],
+            ["ENTER", 'Z','X','C','V','B','N','M','del']
+        ]
+        var words=["apple","mango","tiger","eagle","happy"];
+        var secretWord = words[Math.floor(Math.random()*words.length)];
+
+        //alert(secretWord);
+
+        //secretWord = "mango"
+        var guess = ""
+        
+
+        var keyE = document.createElement('div');
+        //依指定的標籤名稱（tagName）建立 HTML 元素
+        var kb = document.getElementById('keyboard');
+        //獲得keyboard的id
+
+        var kclick = 0; //按下次數
+        for(let i=0;i<keyboard.length;i++){
+            var keyrow = document.createElement("div");
+            //keyrow.classList.add("keyrows");
+            for(let j=0; j<keyboard[i].length;j++){
+                let keyEl = document.createElement('div');
+                keyEl.setAttribute('id','key'+i+"-"+j);
+                keyEl.classList.add('key');
+                keyEl.textContent = keyboard[i][j];
+
+                
+                keyEl.addEventListener('click',(e)=>{  //按下去
+                    let tmp = e.target.textContent;
+                    if (tmp == 'ENTER'){
+                        alert("You guess : "+guess+" and the answer : "+secretWord);
+                    }
+                    guess += tmp;
+                    kclick ++;
+                    document.getElementById('tile-'+kclick).textContent=tmp;   //上面格子改變
+                    document.getElementById('tile-'+kclick).style.background="rgb(94, 110, 122)";
+                    document.getElementById('tile-'+kclick).classList.add('spin');
+                    
+                })
+                
+                keyrow.appendChild(keyEl);
+            }
+            //let brr = document.createElement('br');
+            //keyrow.appendChild(brr)
+            kb.appendChild(keyrow);
+        }
+       
+        for(let i=0; i< guess.length; i++) {
+            if(!secretWord.includes(guess[i])) {
+                //assign grey to the tile
+            }
+            else {
+                if(secretWord[i]==guess[i]) {
+                    //assign green to the tile
+                }
+                else{
+                    //assign orange to the tile
+                }
+            }
+
+
+        }
+
+        if(guess == secretWord){
+            //show notify success
+        }
+
+    </script>
+</body>
+</html>

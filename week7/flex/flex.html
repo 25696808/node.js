@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Flexbox Testbed</title>
+    <style>
+        :root{
+           --green:rgb(16, 165, 11);
+           --yellow:rgb(230, 217, 41);       
+        }
+        *{
+            box-sizing: border-box;
+            border: solid 1px red;
+            padding:0;
+            margin:0
+        }
+        .wordle{
+            display:flex;
+            background-color: rgb(195, 183, 17);
+            flex-direction: column;
+           
+        }
+
+        .bar{
+            display:flex;
+            background-color: rgb(126, 168, 204);
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .screen{
+            width:100vw;
+            height:40vh;
+            background-color: rgb(184, 214, 234);
+            display:flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .keyboard{
+            with:100vw;
+            height:40vh;
+            background-color: rgb(216, 245, 253);
+        }
+
+        .help{
+            margin-right:auto;
+        }
+
+        .stat{
+            margin-left:auto
+        }
+       
+
+
+    </style>
+</head>
+<body>
+   <div class="wordle">
+       <div class="bar">
+           <div class="menu"><span><i class="fa-solid fa-bars"></i></span></div>
+           <div class="help"><span><i class="fa-solid fa-circle-question"></i></span></div>
+           <div class="title"><h1> Worlde </h1></div>
+           <div class="stat"> stat </div>
+           <div class="setting"> setting </div>
+       </div>
+       <div class="screen">
+            <h1>這是螢幕</h1>
+       </div>
+       <div class="keyboard">
+            <h1>這是鍵盤</h1>
+       </div>
+   </div>
+    
+</body>
+</html>

@@ -1,0 +1,183 @@
+body{
+    font-family:Microsoft YaHei;
+    text-align: center;
+    
+}
+
+hr{
+    width: 500px;
+}
+
+#title{
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+} /*標題*/
+
+#board{
+    width: 1150px;
+    height: 400px;
+    /*background-color: aquamarine;*/
+    margin: 0 auto;
+    margin-top:3px;
+    display: flex;
+    flex-wrap: wrap;
+} /*上方面板*/
+
+.copyright{
+    text-align: left;
+    vertical-align: text-bottom;
+    margin: 5px;
+    height:100%;
+}
+
+/*上方面板格子與內文字*/
+.tile{
+    /*box*/
+    
+    border-top: 4px solid rgb(183, 188, 182);
+    border-left: 4px solid rgb(183, 188, 182);
+    border-right: 2px solid rgb(183, 188, 182);
+    border-bottom: 2px solid rgb(183, 188, 182);
+    border-radius:2px;
+    width: 60px;
+    height: 80px;
+    margin: 2.5px;
+    background:linear-gradient(135deg, rgb(105, 189, 132) , rgb(52, 118, 73) );
+
+    /*text*/
+    
+    color: black;
+    font-size: 0.5px; 
+    
+    display: flex;
+    overflow:hidden;
+    justify-content: center; /*水平置中*/
+    align-items: center; /*垂直置中*/ 
+}
+.tile2{
+    /*box*/
+    
+    border-top: 4px solid rgb(183, 188, 182);
+    border-left: 4px solid rgb(183, 188, 182);
+    border-right: 2px solid rgb(183, 188, 182);
+    border-bottom: 2px solid rgb(183, 188, 182);
+    border-radius:2px;
+    width: 60px;
+    height: 80px;
+    margin: 2.5px;
+    background:white;
+
+    /*text*/
+    
+    color: black;
+    font-size: 0.5px; 
+    
+    display: flex;
+    overflow:hidden;
+    justify-content: center; /*水平置中*/
+    align-items: center; /*垂直置中*/ 
+}
+
+/*正確位置顏色*/
+.correct{
+    background: #6AAA64;
+    color: white;
+    border: white;
+
+}
+/*有字位置錯顏色*/
+.present{
+    background: #C98458;
+    color: white;
+    border: white;
+
+}
+/*無字顏色*/
+.absent{
+    background: #787C7E;
+    color: white;
+    border: white;
+
+}
+/*鍵盤*/
+.keyboard-row{
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+/*鍵盤內字*/
+.key-tile{
+    /*box*/
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 42px;
+    height: 46px;
+    margin: 1px;
+    
+    /*text*/
+    font-size: 20px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /*水平置中*/
+    align-items: center; /*垂直置中*/ 
+}
+/*ENTER鍵*/
+.enter-key-tile{
+    /*box*/
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 86px;
+    height: 46px;
+    margin: 1px;
+
+    /*text*/
+    font-size: 20px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /*水平置中*/
+    align-items: center; /*垂直置中*/ 
+}
+
+/*特效*/
+.spin{
+    animation-name: spinAnimation;
+    animation-duration:1s;
+    animation-timing-function: ease-in-out;
+    /*animation-fill-mode:forwards;*/
+    
+}
+@keyframes spinAnimation {
+    0% {
+        transform:rotateY(0deg);
+        background:rgb(35, 107, 33);
+    }
+    100% {
+        transform:rotateY(180deg);
+        background:rgb(255, 255, 255);
+        
+    }
+    
+}
+
+.keyboard-img{
+    width:36px;
+    height:40px;
+    /*background-color:red;*/
+}
+
+.board-img{
+    width: 50px;
+    height: 70px;
+}
+
+.answer-sheet{
+    width: 1150px;
+    height: 100px;
+    /*background-color: aquamarine;*/
+    margin: 0 auto;
+    margin-top:3px;
+    display: flex;
+    flex-wrap: wrap;
+}

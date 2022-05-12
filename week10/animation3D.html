@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container { 
+    width: 200px; 
+    height: 200px; 
+    position: relative; 
+    margin: 100px; 
+    border: 1px solid #CCC;
+    perspective: 1000px;   /*!!!!!!!!*/
+ }
+ 
+ #cube { 
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    transform-style: preserve-3d; /*!!!!!!!!*/
+    transform: translateZ( -100px ); 
+ 
+ }
+ #cube figure { 
+    width: 196px; 
+    height: 196px; 
+    display: block; 
+    position: absolute; /*!!!!!!!!*/
+    border: 2px solid black; 
+    line-height: 196px; 
+    font-size: 120px; 
+    font-weight: bold; 
+    color: white; 
+    text-align: center; 
+    margin:0px; 
+}
+
+/* Applying a unique color to each face */
+#cube .front { background: hsla( 0, 100%, 50%, 0.7 ); } 
+ #cube .back { background: hsla( 60, 100%, 50%, 0.7 ); } 
+ #cube .right { background: hsla( 120, 100%, 50%, 0.7 ); } 
+ #cube .left { background: hsla( 180, 100%, 50%, 0.7 ); } 
+ #cube .top { background: hsla( 240, 100%, 50%, 0.7 ); } 
+ #cube .bottom { background: hsla( 300, 100%, 50%, 0.7 ); } 
+ /* Giving the desired orientation to each side of the cube */
+ #cube .front { 
+ transform: rotateY( 0deg ) translateZ( 100px );
+ } 
+ #cube .back { 
+ transform: rotateX( 180deg ) translateZ( 100px );
+ } 
+ #cube .right { 
+ transform: rotateY( 90deg ) translateZ( 100px ); 
+ } 
+ #cube .left { 
+ transform: rotateY( -90deg ) translateZ( 100px ); 
+ } 
+ #cube .top { 
+ transform: rotateX( 90deg ) translateZ( 100px ); 
+ } 
+ #cube .bottom { 
+ transform: rotateX( -90deg ) translateZ( 100px ); 
+ }
+
+ @keyframes spincube {
+    from,to { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    16% { transform: rotateY(-90deg); }
+    33% { transform: rotateY(-90deg) rotateZ(90deg); }
+    50% { transform: rotateY(-180deg) rotateZ(90deg); }
+    66% { transform: rotateY(90deg) rotateX(90deg); }
+    83% { transform: rotateX(90deg); }
+ }
+ #cube {
+    animation-name: spincube;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    transform-style: preserve-3d;
+    transform-origin: 60px 60px 0;
+ }
+ #cube:hover {
+     animation-play-state: paused;
+ }
+
+
+
+ 
+</style>
+<body>
+    <section class="container">
+        <div id="cube">
+        <figure class="top">1</figure>
+        <figure class="front">2</figure>
+        <figure class="right">3</figure>
+        <figure class="left">4</figure>
+        <figure class="bottom">5</figure>
+        <figure class="back">6</figure>
+        </div>
+    </section>
+</body>
+</html>

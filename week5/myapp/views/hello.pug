@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        form(action="/hello", method="post") 
+            div
+                label(for="say") 
+                input(type="text" name="我的名字" value='Hi! ')
+            br
+            div
+            label(for="to")
+            input(name="喜歡吃" value="food: ")
+            br
+            button(type="submit") 送出表單

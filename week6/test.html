@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background:linear-gradient(180deg, rgb(228, 228, 168),rgb(247, 151, 151));
+            width:100%;
+            height: 100vh;
+
+        }
+
+        .header {
+            width:100%;
+            height:100px;
+            background-color: cornflowerblue;
+
+        }
+        .tile{
+            height:60px;
+            width:60px;
+            border: solid red 1px;
+            margin:5px;
+            float:left;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15pt;
+        }
+
+       
+        .board{
+            width:100%;
+            height:300px;
+            background-color: rgb(177, 241, 124);
+ 
+         }
+
+        .keyboard{
+           width:100%;
+           height:300px;
+           background-color: rgb(94, 141, 94);
+
+        }
+        .key{
+            height: 50px;
+            width:50px;
+            border: solid rgb(93, 25, 148) 1px;
+            margin:5px;
+            float:left;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15pt;
+        }
+        .spin{
+            animation: spinAnimation 1s ease-in-out;
+           
+        }
+        @keyframes spinAnimation{
+            from {
+                transform:rotateY(0deg)
+            }
+            to {
+                transform:rotateY(180deg)
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="header"></section>
+    <div class="board">
+        <div class="tile" id="tile-1">m</div>
+        <div class="tile">a</div>
+        <div class="tile">n</div>
+        <div class="tile">g</div>
+        <div class="tile">o</div>
+    </div>
+    <div class="keyboard" id="keyboard">
+        
+    </div>
+   
+    <script>
+        const keyboard=[
+           ['Q',"W","E"],
+           ["A","S",'D'],
+           ["Enter",'Z','del']
+        ]
+
+        var words=["apple","mango","tiger","eagle","cargo"]
+        var secretWord = words[Math.floor(Math.random()* words.length)]
+        alert(secretWord)
+        /*secretWord="tiger"*/
+        const guess ="mango"
+         
+         var kb = document.getElementById('keyboard')
+         var keyE = document.createElement('div');
+ /*       
+         
+
+         keyboard.forEach((row,index)=>{
+             row.forEach((letter,col)=>{})
+         });
+*/
+         for(let i = 0; i < keyboard.length; i++){
+             var keyrow = document.createElement('div');
+             for (let j=0; j < keyboard[i].length; j++){
+                 let keyEl = document.createElement('div');
+                 keyEl.setAttribute('id','key'+i+"-"+j);
+                 keyEl.classList.add('key');
+                 keyEl.textContent=keyboard[i][j];
+                
+                 keyEl.addEventListener('click',(e)=>{
+                   
+                    document.getElementById('tile-1').textContent=e.target.textContent;
+                    document.getElementById('tile-1').style.background='yellow'
+                    document.getElementById('tile-1').classList.add('spin')
+                })
+                keyrow.appendChild(keyEl);
+
+             }
+             kb.appendChild(keyrow)
+         }
+
+         for (let i= 0; i < guess.length; i++){
+             if(!secretWord.includes(guess[i])) {
+                 // assign grey to the tile
+             }
+             else{
+                 if (secretWord[i]==guess[i]) {
+                     //assign green to the tile
+                 }
+                 else {
+                     //assign orange
+                 }
+             }
+         }
+         if(guess == secretWord){
+             // notify user success
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>Hello React!</title> 
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script> 
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script> 
+</head> 
+<body> 
+<div id="root"></div>
+
+<script type="text/babel">
+    function tick() {
+        const element = (
+            <div>
+            <h1>Hello, world!</h1>
+            <h2>It is {new Date().toLocaleTimeString()}.</h2>
+            </div>
+        );
+ // highlight-next-line
+    ReactDOM.render(element, document.getElementById('root'));
+    }
+    setInterval(tick, 1000);
+    //setInterval() 固定延遲了某段時間之後，才去執行對應的程式碼
+</script>
+</body> 
+</html>

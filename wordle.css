@@ -1,0 +1,126 @@
+body{
+    font-family:Comic Sans MS;
+    text-align: center;
+    
+}
+
+hr{
+    width: 500px;
+}
+
+#title{
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+} /*標題*/
+
+#board{
+    width: 350px;
+    height: 420px;
+    /*background-color: aquamarine;*/
+    margin: 0 auto;
+    margin-top:3px;
+    display: flex;
+    flex-wrap: wrap;
+} /*上方面板*/
+
+.copyright{
+    text-align: left;
+    vertical-align: text-bottom;
+    margin: 5px;
+    height:100%;
+}
+
+/*上方面板格子與內文字*/
+.tile{
+    /*box*/
+    border: 2px solid lightgray;
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+
+    /*text*/
+    color: black;
+    font-size: 36px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /*水平置中*/
+    align-items: center; /*垂直置中*/ 
+}
+
+/*正確位置顏色*/
+.correct{
+    background-color: #6AAA64;
+    color: white;
+    border: white;
+
+}
+/*有字位置錯顏色*/
+.present{
+    background-color: #C98458;
+    color: white;
+    border: white;
+
+}
+/*無字顏色*/
+.absent{
+    background-color: #787C7E;
+    color: white;
+    border: white;
+
+}
+/*鍵盤*/
+.keyboard-row{
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+/*鍵盤內字*/
+.key-tile{
+    /*box*/
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 36px;
+    height: 40px;
+    margin: 1px;
+    
+    /*text*/
+    font-size: 20px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /*水平置中*/
+    align-items: center; /*垂直置中*/ 
+}
+/*ENTER鍵*/
+.enter-key-tile{
+    /*box*/
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 74px;
+    height: 40px;
+    margin: 1px;
+
+    /*text*/
+    font-size: 20px; 
+    font-weight: bold;
+    display: flex;
+    justify-content: center; /*水平置中*/
+    align-items: center; /*垂直置中*/ 
+}
+
+/*特效*/
+.spin{
+    animation-name: spinAnimation;
+    animation-duration:1s;
+    animation-timing-function: ease-in-out;
+    
+}
+@keyframes spinAnimation {
+    from {
+        transform:rotateY(0deg)
+    }
+    to {
+        transform:rotateY(180deg)
+    }
+}
